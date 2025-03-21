@@ -43,6 +43,7 @@ def circle(start, end):
     down()
     begin_fill()
 
+    # En un rango de 360, mover 1 posición hacia arriba y a la izquierda, para ir dibujando el círculo
     for count in range(360):
         forward(1)
         left(1)
@@ -58,11 +59,11 @@ def rectangle(start, end):
     down()
     begin_fill()
     
-    for count in range(2):
-        forward(end.x - start.x)
-        left(90)
-        forward(end.y - start.y)
-        left(90)
+    for count in range(2): # Dibuja dos lados largos y dos cortos para formar un rectángulo
+        forward(end.x - start.x) # Dibuja la base del rectángulo
+        left(90) # Gira 90 grados a la izquierda
+        forward(end.y - start.y) # Dibuja la altura del rectángulo
+        left(90) # Gira 90 grados a la izquierda
 
     end_fill()
 
@@ -73,9 +74,9 @@ def triangle(start, end):
     down()
     begin_fill()
 
-    for count in range(3):
-        forward(end.x - start.x)
-        left(120)
+    for count in range(3): # Bucle para dibujar los 3 lados del triángulo
+        forward(end.x - start.x) # Dibuja un lado del triángulo
+        left(120) # Gira 120 grados para formar el siguiente lado
 
     end_fill()
 
@@ -108,7 +109,7 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
-onkey(lambda: color('purple'), 'P')
+onkey(lambda: color('purple'), 'P') # Nuevo color 
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
